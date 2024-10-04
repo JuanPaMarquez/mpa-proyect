@@ -1,0 +1,12 @@
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+  margin: 0;
+  background: linear-gradient(to left, #A46596 50%, #423FFB 80%); 
+}
