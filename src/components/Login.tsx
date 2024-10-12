@@ -22,7 +22,7 @@ function Login() {
   return (
     <div className='loginContainer'>
       <div>
-        <img className='logoAccount' src="src/assets/accountLogo.png" alt="logo"/>
+        <img className='logoAccount' src="public/accountLogo.png" alt="logo"/>
       </div>
       <h1 className='titleLogin'>Iniciar Sesión</h1>
       <form className='form' onSubmit={handleSubmit}>
