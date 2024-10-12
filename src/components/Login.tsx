@@ -19,10 +19,12 @@ function Login() {
     console.log(inputUser);
   };
 
+  const logoPath = import.meta.env.DEV ? "public/accountLogo.png" : "/mpa-proyect/accountLogo.png";
+
   return (
     <div className='loginContainer'>
       <div>
-        <img className='logoAccount' src="/accountLogo.png" alt="logo"/>
+        <img className='logoAccount' src={logoPath} alt="logo"/>
       </div>
       <h1 className='titleLogin'>Iniciar Sesión</h1>
       <form className='form' onSubmit={handleSubmit}>
