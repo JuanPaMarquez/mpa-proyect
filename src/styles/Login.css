@@ -77,6 +77,7 @@
 a.buttonPassword {
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
   color: #131CE5;
 }
 
