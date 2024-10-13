@@ -1,8 +1,8 @@
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: env(safe-area-inset-bottom) 16px;
+  padding: env(safe-area-inset-bottom);
 }
