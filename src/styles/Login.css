@@ -86,6 +86,35 @@ a.buttonPassword:hover {
   font-weight: bolder;
 }
 
+.buttonShowPassword {
+  width: auto;
+  height: 10px;
+  border: none;
+  background: none;
+  background-color: none;
+  color: #000000;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  margin: 10px 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.buttonShowPassword:hover {
+  color: rgb(32, 55, 255);
+}
+
+.eyePassword {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 10px;
+  /* position: absolute;
+  transform: translateY(0%) translateX(-130%); */
+}
+
 .buttonAccount {
   width: auto;
   height: 50px;

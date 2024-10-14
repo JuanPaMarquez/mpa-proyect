@@ -1,10 +1,12 @@
 import '../styles/Login.css'
 import { useState } from 'react'
 import { FiUser, FiLock  } from "react-icons/fi";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function Login() {
   const [inputUser, setInputUser] = useState('');
   const [inputLock, setInputLock] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUser(e.target.value);
@@ -49,13 +51,22 @@ function Login() {
                 </div>
             )}
           <input 
-            type="password" 
+            type={showPassword ? "text" : "password"}
             placeholder="Contraseña" 
             value={inputLock}
             onChange={handleInputLock}
             required
           />
         </div>
+        <button 
+          type='button'
+          className='buttonShowPassword' 
+          onClick={() => setShowPassword(!showPassword)}>
+          <span className='eyePassword'>
+            {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+          </span> {showPassword ? "Ocultar" : "Mostrar"} contraseña
+        </button>
+
         <h3 className='textPassword'>
           ¿Has olvidado tu <u>
               <a 
