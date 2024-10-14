@@ -58,12 +58,18 @@
   margin-top: 20px;
   cursor: pointer;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 1s ease
+  transition: box-shadow 1s ease;
 }
 
-.buttonSubmit:hover {
-  background-color: #000000;
-  color: #FFFFFF;
+@media (hover: hover) {
+  .buttonSubmit:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+}
+.buttonSubmit:active {
+  background-color: #000000; 
+  color: #FFFFFF; 
 }
 
 .textPassword {
@@ -81,7 +87,13 @@ a.buttonPassword {
   color: #131CE5;
 }
 
-a.buttonPassword:hover {
+@media (hover: hover) {
+  a.buttonPassword:hover {
+    color: black;
+    font-weight: bolder;
+  }
+}
+a.buttonPassword:active {
   color: black;
   font-weight: bolder;
 }
@@ -102,9 +114,15 @@ a.buttonPassword:hover {
   align-items: center;
 }
 
-.buttonShowPassword:hover {
+@media (hover: hover) {
+  .buttonShowPassword:hover {
+    color: rgb(32, 55, 255);
+  }
+}
+.buttonShowPassword:active {
   color: rgb(32, 55, 255);
 }
+
 
 .eyePassword {
   font-size: 20px;
@@ -129,7 +147,12 @@ a.buttonPassword:hover {
   cursor: pointer;
 }
 
-.buttonAccount:hover {
+@media (hover: hover) {
+  .buttonAccount:hover {
+    color: black;
+  }
+}
+.buttonAccount:active { 
   color: black;
 }
 
@@ -148,4 +171,8 @@ input {
   font-family: 'Inter', sans-serifs;
   font-weight: 500;
   color: #000000;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
