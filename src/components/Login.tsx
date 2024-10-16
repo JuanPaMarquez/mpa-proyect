@@ -4,9 +4,10 @@ import { FiUser, FiLock  } from "react-icons/fi";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 function Login() {
-  const [inputUser, setInputUser] = useState('');
-  const [inputLock, setInputLock] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [inputUser, setInputUser] = useState('')
+  const [inputLock, setInputLock] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [girar, setGirar] = useState(false)
 
   const handleInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUser(e.target.value);
@@ -21,10 +22,16 @@ function Login() {
     console.log(inputUser);
   };
 
+  const girarFuncion = () => {
+    setGirar(!girar)
+  }
+
   // const logoPath = import.meta.env.DEV ? "./accountLogo.png" : "/mpa-proyect/accountLogo.png";
 
   return (
-    <div className='loginContainer'>
+    <div 
+      className={`loginContainer ${girar ? 'rotate' : ''}`}
+    >
       <div>
         <img className='logoAccount' src="./accountLogo.png" alt="logo"/>
       </div>
@@ -70,6 +77,7 @@ function Login() {
         <h3 className='textPassword'>
           ¿Has olvidado tu <u>
               <a 
+                onClick={girarFuncion}
                 // href="/resetPassword"
                 className='buttonPassword'
               >contraseña
