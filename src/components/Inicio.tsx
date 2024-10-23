@@ -24,7 +24,10 @@ function Inicio() {
   return (
     <>
       <nav id="navbar">
-        <h2>MPA-PROJECT</h2>
+        <div id="nombre">
+          <img src="./logo.ico" alt="logo" />
+          <h2>MPA-PROJECT</h2>
+        </div>
         <ul>
             <li><a href="#welcome-section" onClick={handleSmoothScroll}>INICIO</a></li>
             <li><a href="#project" onClick={handleSmoothScroll}>DESCRIPCION</a></li>
