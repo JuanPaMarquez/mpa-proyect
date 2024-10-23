@@ -6,14 +6,13 @@ import Inicio from '../components/Inicio';
 
 function App() {
   const location = useLocation();
-  const path = location.pathname; // Usamos 'pathname' en lugar de 'hash'
+  const path = location.pathname;
   useEffect(() => {
     console.log('Current path in App:', path);
   }, [path]);
   return (
-      <div className={path === '/' ? '' : 'app-login'}>
+      <div className={path === '/' ? 'inicio' : 'app-login'}>
         <Routes>
-          {/* <Route path="*" element={<CurrentPath />} /> */}
           <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
         </Routes>
