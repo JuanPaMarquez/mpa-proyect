@@ -10,3 +10,7 @@ body {
   margin: 0;
   background: linear-gradient(to left, #A46596 50%, #423FFB 80%); 
 }
+
+#root {
+  min-height: 100dvh;
+}
