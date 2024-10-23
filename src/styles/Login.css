@@ -145,6 +145,17 @@ a.buttonPassword:active {
   transform: translateY(0%) translateX(-130%); */
 }
 
+.iconPassword {
+  position: absolute;
+  cursor: pointer;
+  left: 35px; /* Espacio desde el lado izquierdo */
+  top: 42px; /* Centrar verticalmente */
+  transform: translateY(-50%) translateX(680%); /* Ajustar el centrado */
+  font-size: 30px; /* Tamaño del ícono */
+  background-color: #FFFFFF;
+  border: none;
+}
+
 .buttonAccount {
   width: auto;
   height: 50px;

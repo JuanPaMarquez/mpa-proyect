@@ -64,15 +64,15 @@ function Login() {
             onChange={handleInputLock}
             required
           />
+          {inputLock !== '' && ( 
+          <button 
+            type='button'
+            className='iconPassword' 
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <IoMdEye /> : <IoMdEyeOff /> }
+          </button>)}
         </div>
-        <button 
-          type='button'
-          className='buttonShowPassword' 
-          onClick={() => setShowPassword(!showPassword)}>
-          <span className='eyePassword'>
-            {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
-          </span> {showPassword ? "Ocultar" : "Mostrar"} contraseña
-        </button>
 
         <h3 className='textPassword'>
           ¿Has olvidado tu <u>
