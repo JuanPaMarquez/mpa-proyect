@@ -1,0 +1,62 @@
+#contacts {
+  height: auto;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 1rem;
+  background-color: #0D2A3F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactos {
+  color: white;
+  max-width: 1000px;
+}
+
+#contacts h2 {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+#contacts p {
+  margin: 1rem 0;
+}
+
+.persona {
+  margin: 10px auto;
+  display: flex;
+  width: 400px;
+  gap: 10px;
+  border: 2px solid #43abf5;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 10px;
+}
+
+.persona img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.info p {
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.links a {
+  color: #0D2A3F;
+  background-color: #35A6FD;
+  border-radius: 10px;
+  padding: 3px;
+}

@@ -2,12 +2,14 @@ import '../styles/Login.css'
 import { useState } from 'react'
 import { FiUser, FiLock  } from "react-icons/fi";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [inputUser, setInputUser] = useState('')
   const [inputLock, setInputLock] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [girar, setGirar] = useState(false)
+  const navigate = useNavigate();
 
   const handleInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUser(e.target.value);
@@ -20,6 +22,7 @@ function Login() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(inputUser);
+    navigate('/perfil');
   };
 
   const girarFuncion = () => {

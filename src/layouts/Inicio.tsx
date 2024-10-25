@@ -1,6 +1,7 @@
 // import { useEffect } from 'react'
 import { useNavigate  } from 'react-router-dom'
-import Descripcion from './Descripcion';
+import Descripcion from '../components/Descripcion';
+import Contactos from '../components/Contactos';
 import '../styles/Inicio.css'
 
 function Inicio() {
@@ -60,6 +61,9 @@ function Inicio() {
           <div className='contenido'>
             <Descripcion />
           </div>
+        </section>
+        <section id='contacts'>
+          <Contactos />
         </section>
       </main>
     </>

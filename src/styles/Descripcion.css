@@ -1,20 +1,20 @@
 
-h2 {
+.contenido h2 {
   margin: 1rem 0;
   padding-right: 2rem;
 }
 
-p {
+.contenido p {
   margin: 1rem 0;
   padding-right: 2rem;
   text-align: justify;
 }
 
-ol {
+.contenido ol {
   margin: 1rem 0;
   padding-left: 2rem;
 }
 
-li {
+.contenido li {
   margin: 0.5rem 0;
 }

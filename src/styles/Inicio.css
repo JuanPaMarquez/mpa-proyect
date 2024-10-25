@@ -1,3 +1,7 @@
+body {
+  background-color: #d1ebff;
+}
+
 .espacio {
   background: #0D2A3F;
   width: 100%;
@@ -89,14 +93,6 @@ nav > ul > li > a:hover {
     margin: auto 1rem;
     width: 100%;
   }
-
-  #contacts h2 {
-    margin: 3px;
-  }
-
-  #contacts {
-    padding: 0;
-  }
 }
 
 #welcome-section {
@@ -167,6 +163,8 @@ nav > ul > li > a:hover {
 
 .contenido {
   height: auto;
+  margin: 0 auto;
+  max-width: 1000px;
   background-color: #d1ebff;
   padding-top: 1rem;
   padding-left: 2rem;
