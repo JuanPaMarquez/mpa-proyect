@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import '../styles/App.css';
 import Login from '../layouts/Login';
@@ -8,17 +8,21 @@ import Perfil from '../layouts/Perfil';
 function App() {
   const location = useLocation();
   const path = location.pathname;
-  useEffect(() => {
-    console.log('Current path in App:', path);
+  const [styleTitle, setStyleTitle] = useState('inicio');
+
+  useLayoutEffect(() => {
+    const style = path.replace('/', '');
+    setStyleTitle(style === '' ? 'inicio' : style);
   }, [path]);
+
   return (
-      <div className={path === '/' ? 'inicio' : 'app-login'}>
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/perfil" element={<Perfil />} />
-        </Routes>
-      </div>
+    <div className={styleTitle}>
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/perfil" element={<Perfil />} />
+      </Routes>
+    </div>
   );
 }
 

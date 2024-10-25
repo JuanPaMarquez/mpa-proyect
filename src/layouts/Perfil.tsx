@@ -1,9 +1,13 @@
-
+import { IoPersonOutline } from "react-icons/io5";
+import "../styles/Perfil.css";
 
 function Perfil() {
   return (
     <div>
-      <h1>Perfil</h1>
+      <main>
+        <div className="barraPerfil"><IoPersonOutline />perfil</div>
+        <div className="barraContenido">contenido</div>
+      </main>
     </div>
   )
 }
