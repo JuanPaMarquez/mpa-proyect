@@ -1,6 +1,48 @@
-
+.perfilContainer {
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-size: 40px;
+}
 
 .barraPerfil, .barraContenido {
   background-color: #D9D9D9;
-  border-radius: 10px;
+  opacity: 70%;
+  border-radius: 25px;
+  height: 80px;
+  width: 90%;
+  margin: 8px 0;
+}
+
+.barraPerfil {
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  
+  justify-content: space-between;
+}
+
+.perfilNombre {
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.perfilNombre svg, .perfilConfig svg {
+  width: 50px;
+  height: 50px;
+}
+
+.perfilConfig {
+  margin: 10px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.barraContenido {
+  height: 100%;
+  margin-bottom: 30px;
 }

@@ -13,6 +13,7 @@ function App() {
   useLayoutEffect(() => {
     const style = path.replace('/', '');
     setStyleTitle(style === '' ? 'inicio' : style);
+    console.log(style)
   }, [path]);
 
   return (
