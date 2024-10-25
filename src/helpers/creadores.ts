@@ -24,7 +24,7 @@ const creadores: Persona[] = [
   {
     "id": 3,
     "nombre": "Yorman Rodolfo Rodriguez Jaimes",
-    "github": "",
+    "github": "https://github.com/YormanRodriguez",
     "linkedin": "https://www.nytimes.com/2024/02/29/science/cats-animal-behavior-meow.html",
     "imagen": "https://avatars.githubusercontent.com/u/168009922?v=4"
   }
