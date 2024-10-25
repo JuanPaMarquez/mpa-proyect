@@ -65,6 +65,9 @@ nav > ul > li > a:hover {
 
 @media (max-width: 650px) {
 
+  .espacio{
+    height: 120px;
+  }
   nav {
     flex-direction: column;
     justify-content: center;
@@ -163,7 +166,7 @@ nav > ul > li > a:hover {
 }
 
 .contenido {
-  height: 100vh;
+  height: auto;
   background-color: #d1ebff;
   padding-top: 1rem;
   padding-left: 2rem;
