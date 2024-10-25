@@ -154,6 +154,17 @@ nav > ul > li > a:hover {
   transform: translateX(7px);
 }
 
+#project .titulo {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  background: #afd8f8;
+  color: #0D2A3F;
+}
+
 .contenido {
   height: 100vh;
+  background-color: #d1ebff;
+  padding-top: 1rem;
+  padding-left: 2rem;
 }

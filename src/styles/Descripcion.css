@@ -1,0 +1,19 @@
+
+h2 {
+  margin: 1rem 0;
+}
+
+p {
+  margin: 1rem 0;
+  padding-right: 2rem;
+  text-align: justify;
+}
+
+ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
