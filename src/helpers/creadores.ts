@@ -23,10 +23,10 @@ const creadores: Persona[] = [
   },
   {
     "id": 3,
-    "nombre": "Jose Antonio Perez",
+    "nombre": "Yorman Rodolfo Rodriguez Jaimes",
     "github": "",
     "linkedin": "https://www.nytimes.com/2024/02/29/science/cats-animal-behavior-meow.html",
-    "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSC4DtHTGprsp7K8u0ZlfSDmIDplvQYH5vniT0I3rpcl6wqBh8b"
+    "imagen": "https://avatars.githubusercontent.com/u/168009922?v=4"
   }
 ];
 
