@@ -1,20 +1,18 @@
 
-.contenido h2 {
+.contenido h2, .contenido p, .contenido ol{
   margin: 1rem 0;
   padding-right: 2rem;
 }
 
 .contenido p {
-  margin: 1rem 0;
-  padding-right: 2rem;
   text-align: justify;
 }
 
 .contenido ol {
-  margin: 1rem 0;
   padding-left: 2rem;
 }
 
 .contenido li {
+  padding-right: 2rem;
   margin: 0.5rem 0;
 }

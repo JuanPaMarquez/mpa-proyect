@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { FiUser, FiLock  } from "react-icons/fi";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +30,9 @@ function Login() {
   }
 
   // const logoPath = import.meta.env.DEV ? "./accountLogo.png" : "/mpa-proyect/accountLogo.png";
-
+  useLayoutEffect(() => {
+    document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
+  }, [])
   return (
     <div 
       className={`loginContainer ${girar ? 'rotate' : ''}`}

@@ -9,11 +9,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to left, #A46596 50%, #423FFB 80%); 
   padding: env(safe-area-inset-bottom);
 }
 
 .perfil {
   height: 100dvh;
-  background: linear-gradient(to left, #A46596 50%, #423FFB 80%); 
 }

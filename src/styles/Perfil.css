@@ -72,11 +72,6 @@
 
 }
 
-@media (width <= 400px) {
-  .perfilTable {
-    font-size: 15px; 
-  }
-}
 
 .perfilTableHead {
   text-align: center;
@@ -98,6 +93,7 @@
 .perfilTable tbody tr {
   display: grid;
   grid-template-columns: 3fr 2fr 0.5fr;
+  background-color: white;
 }
 
 .perfilTable tbody tr button {
@@ -168,4 +164,16 @@
   height: 50px;
   width: 200px;
   cursor: pointer;
+}
+
+@media (width <= 500px) {
+  .perfilTable {
+    font-size: 15px; 
+  }
+  .buttonInfo {
+    margin-left: 10px;
+  }
+  .buttonNewPrediction{
+    margin-right: 10px;
+  }
 }

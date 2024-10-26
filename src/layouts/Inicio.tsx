@@ -3,6 +3,7 @@ import { useNavigate  } from 'react-router-dom'
 import Descripcion from '../components/Descripcion';
 import Contactos from '../components/Contactos';
 import '../styles/Inicio.css'
+import { useLayoutEffect } from 'react';
 
 function Inicio() {
   const navigate = useNavigate();
@@ -22,7 +23,9 @@ function Inicio() {
     }
   };
 
-
+  useLayoutEffect(() => {
+    document.body.style.background = "#d1ebff";
+  }, [])
   return (
     <>
       <nav id="navbar">

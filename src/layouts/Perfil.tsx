@@ -3,8 +3,13 @@ import { IoMdSettings } from "react-icons/io";
 import { MdDeleteOutline } from "react-icons/md";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import "../styles/Perfil.css";
+import { useLayoutEffect } from "react";
 
 function Perfil() {
+
+  useLayoutEffect(() => {
+    document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
+  }, []);
   return (
     <div>
       <main className="perfilContainer">
