@@ -14,6 +14,6 @@
 }
 
 .perfil {
-  height: 100vh;
+  height: 100dvh;
   background: linear-gradient(to left, #A46596 50%, #423FFB 80%); 
 }

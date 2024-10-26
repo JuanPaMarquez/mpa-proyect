@@ -3,7 +3,7 @@
   font-family: 'Inter', sans-serif;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100dvh;
   font-size: 2rem;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .barraContenido {
-  height: 80vh;
+  height: 80dvh;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
