@@ -56,7 +56,7 @@ function CrearRegistro() {
               <Dropdown options={tipoMateria} cambiar={optionTipoMateria} />
               <div className='horasClase'>
                 <label htmlFor="horasClase">Horas de clase (semanales)</label>
-                <input type="number" id="horasClase" name="horasClase" value={horasClase} onChange={(e) => setHorasClase(Number(e.target.value))} />
+                <input type="number" id="horasClase" name="horasClase" onChange={(e) => setHorasClase(Number(e.target.value))} />
               </div>
               <div className='archivo'>
                 <label htmlFor="archivoExcel">Adjuntar archivo</label>
