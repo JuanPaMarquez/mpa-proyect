@@ -1,0 +1,108 @@
+.crearRegistroContainer {
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
+}
+
+.tituloRegistroContainer, .insercionDatosContainer {
+  background-color: #D9D9D9;
+  opacity: 70%;
+  border-radius: 25px;
+  width: 90%;
+  margin: 8px 0;
+}
+
+.tituloRegistroContainer {
+  font-size: 25px;
+  height: 80px;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.tituloRegistroContainer h1 {
+  display: flex;
+  align-items: center;
+}
+
+@media (width <= 500px) {
+  .tituloRegistroContainer {
+    font-size: 15px;
+    height: 50px;
+  }
+}
+
+.insercionDatosContainer {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.encabezadoCrear {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  margin-top: 15px;
+}
+
+.encabezadoCrear h1{
+  font-size: 40px;
+}
+
+.encabezadoCrear svg {
+  height: 60px;
+  width: 60px;
+  color: #131CE5;
+  cursor: pointer;
+}
+
+.controlCrearRegistro{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculaButton, .cancelarButton {
+  border: none;
+  background-color: white;
+  font-size: 30px;
+  font-weight: 800;
+  border-radius: 15px;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+
+
+.formRegistro {
+  font-size: 20px;
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.datosRegistro {
+  margin-left: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.semestreLabel {
+  display: block;
+  padding: 10px 0;
+}
+
+
+.datosRegistro #semestre {
+  display: block;
+  width: 250px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.datosRegistro select option {
+  color: green;
+}

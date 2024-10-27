@@ -41,7 +41,7 @@ function Login() {
         <img className='logoAccount' src="./accountLogo.png" alt="logo"/>
       </div>
       <h1 className='titleLogin'>Iniciar Sesión</h1>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='formLogin' onSubmit={handleSubmit}>
         <div className="input-container-user">
           {inputUser === '' && (
                 <div className="iconUser">

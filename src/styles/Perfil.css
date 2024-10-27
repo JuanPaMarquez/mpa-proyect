@@ -11,16 +11,15 @@
   background-color: #D9D9D9;
   opacity: 70%;
   border-radius: 25px;
-  height: 80px;
   width: 90%;
   margin: 8px 0;
 }
 
 .barraPerfil {
+  height: 80px;
   display: flex;
   gap: 10px;
   text-align: center;
-  
   justify-content: space-between;
 }
 
@@ -29,6 +28,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+.perfilNombre svg, .perfilConfig svg {
+  width: 50px;
+  height: 50px;
 }
 
 @media (width <= 400px) {
@@ -43,10 +46,6 @@
   .perfilNombre {
     gap: 0;
   }
-}
-.perfilNombre svg, .perfilConfig svg {
-  width: 50px;
-  height: 50px;
 }
 
 .perfilConfig {

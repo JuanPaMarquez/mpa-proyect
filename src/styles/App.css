@@ -15,3 +15,7 @@
 .perfil {
   height: 100dvh;
 }
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}

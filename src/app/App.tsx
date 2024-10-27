@@ -4,6 +4,7 @@ import '../styles/App.css';
 import Login from '../layouts/Login';
 import Inicio from '../layouts/Inicio';
 import Perfil from '../layouts/Perfil';
+import { CrearRegistro } from '../layouts/crearRegistro';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/registro" element={<CrearRegistro />} />
       </Routes>
     </div>
   );

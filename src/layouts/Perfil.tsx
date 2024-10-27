@@ -4,14 +4,20 @@ import { MdDeleteOutline } from "react-icons/md";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import "../styles/Perfil.css";
 import { useLayoutEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function Perfil() {
+  const navigate = useNavigate();
+
+  const crearRegistro = () => {
+    navigate('/registro');
+  }
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
   }, []);
   return (
-    <div>
+    <>
       <main className="perfilContainer">
         <div className="barraPerfil">
           <div className="perfilNombre">
@@ -69,11 +75,11 @@ function Perfil() {
           </table>
           <div className="pieConfig">
             <button className="buttonInfo">Informacion<FaRegQuestionCircle /></button>
-            <button className="buttonNewPrediction">Nueva Prediccion</button>
+            <button className="buttonNewPrediction" onClick={crearRegistro}>Nueva Prediccion</button>
           </div>
         </div>
       </main>
-    </div>
+    </>
   )
 }
 
