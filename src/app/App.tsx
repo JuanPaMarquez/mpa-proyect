@@ -4,7 +4,7 @@ import '../styles/App.css';
 import Login from '../layouts/Login';
 import Inicio from '../layouts/Inicio';
 import Perfil from '../layouts/Perfil';
-import { CrearRegistro } from '../layouts/crearRegistro';
+import CrearRegistro from '../layouts/crearRegistro'; 
 
 function App() {
   const location = useLocation();

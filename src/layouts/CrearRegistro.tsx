@@ -2,7 +2,7 @@ import '../styles/crearRegistro.css'
 import { FaQuestion } from "react-icons/fa";
 import { useLayoutEffect } from "react";
 
-export function CrearRegistro() {
+function CrearRegistro() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,3 +42,5 @@ export function CrearRegistro() {
     </>
   )
 }
+
+export default CrearRegistro
