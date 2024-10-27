@@ -1,33 +1,31 @@
 import '../styles/crearRegistro.css'
 import { FaQuestion } from "react-icons/fa";
 import { useState, useLayoutEffect } from "react";
-
-interface Option {
-  value: string;
-  label: string;
-}
-
-const options: Option[] = [
-  { value: 'Primer Corte', label: 'Primer Corte' },
-  { value: 'Segundo Corte', label: 'Segundo Corte' },
-  { value: 'Tercer Corte', label: 'Tercer Corte' },
-];
+import Dropdown from '../components/Dropdown';
+import { corteSemestre, tipoMateria } from '../helpers/dropdownOptions';
 
 function CrearRegistro() {
-  const [isOpen, setIsOpen] = useState(false); // Controla si el menú está abierto
-  const [selectedOption, setSelectedOption] = useState(options[0]); // Selecciona la opción actual
+  const [selectedCorte, setSelectedCorte] = useState(corteSemestre[0].value);
+  const [selectedTipoMateria, setSelectedTipoMateria] = useState(tipoMateria[0].value);
+  const [horasClase, setHorasClase] = useState(0);
+  const [fileName, setFileName] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(selectedOption.value);
+    console.log("submit: ", selectedCorte);
+    console.log("submit: ", selectedTipoMateria);
+    console.log("submit: ", horasClase);
   }
 
-
-  const toggleDropdown = () => setIsOpen(!isOpen); // Abre o cierra el menú
-  const handleOptionClick = (option: Option) => {
-    setSelectedOption(option);
-    setIsOpen(false); // Cierra el menú después de seleccionar una opción
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFileName(file.name); // Guarda el nombre del archivo
+    }
   };
+
+  const optionCorte = (option: string) => setSelectedCorte(option);
+  const optionTipoMateria = (option: string) => setSelectedTipoMateria(option);
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
@@ -46,22 +44,21 @@ function CrearRegistro() {
           <form className='formRegistro' action="" onSubmit={handleSubmit}>
             <div className='datosRegistro'>
               <label className='semestreLabel' htmlFor="semestre">Momento del semestre</label>
-              <div className="dropdown">
-                <button type='button' onClick={toggleDropdown} className="dropdown-toggle">{selectedOption.label}</button>
-                {isOpen && (
-                  <ul className="dropdown-menu">
-                    {options.map(option => (
-                      <li
-                        key={option.value}
-                        className="dropdown-option"
-                        onClick={() => handleOptionClick(option)}
-                      >
-                        {option.label}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+              <Dropdown options={corteSemestre} cambiar={optionCorte} />
+              <label className='materiaLabel' htmlFor="materia">Tipo de materia</label>
+              <Dropdown options={tipoMateria} cambiar={optionTipoMateria} />
+              <div className='horasClase'>
+                <label htmlFor="horasClase">Horas de clase (semanales)</label>
+                <input type="number" id="horasClase" name="horasClase" value={horasClase} onChange={(e) => setHorasClase(Number(e.target.value))} />
               </div>
+              <div className='archivo'>
+                <label htmlFor="archivoExcel">Adjuntar archivo</label>
+                <div className="button-file">
+                  <span className="file-name">{fileName || 'No se ha seleccionado archivo'}</span>
+                  <input type="file" id="archivoExcel" name="archivoExcel"  onChange={handleFileChange}/>
+                </div>
+              </div>
+              
             </div>
             <div className="controlCrearRegistro">
               <button className='cancelarButton' type="submit">Cancelar</button>

@@ -86,51 +86,85 @@
 
 .datosRegistro {
   margin-left: 30px;
-  font-size: 15px;
+  font-size: 25px;
   font-weight: bold;
 }
 
-.semestreLabel {
+.datosRegistro > label {
   display: block;
   padding: 10px 0;
+
+}
+.horasClase, .archivo {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 200px;
+#archivoExcel {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 150px;
 }
 
-.dropdown-toggle {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  text-align: left;
+.button-file {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 4px;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+.file-name {
+  font-size: 17px;
 }
 
-.dropdown-option {
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.datosRegistro div input {
+  border: none;
+  text-align: end;
+  font-size: 15px;
 }
 
-.dropdown-option:hover {
-  background-color: #eaeaea;
+@media (width <= 670px) {
+  .horasClase {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #horasClase {
+    width: 200px;
+    height: 30px;
+    text-align: start;
+  }
+
+  .archivo {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-file {
+    justify-content: start;
+    gap: 10px;
+  }
+
+  .calculaButton, .cancelarButton {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+
+  }
+}
+
+@media (width <= 470px) {
+  .encabezadoCrear {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .formRegistro {
+    padding: 0;
+  }
+  .datosRegistro {
+    margin-left: 20px;
+  }
 }
