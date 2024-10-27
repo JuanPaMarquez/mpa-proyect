@@ -62,7 +62,13 @@ function CrearRegistro() {
                 <label htmlFor="archivoExcel">Adjuntar archivo</label>
                 <div className="button-file">
                   <span className="file-name">{fileName || 'No se ha seleccionado archivo'}</span>
-                  <input type="file" id="archivoExcel" name="archivoExcel"  onChange={handleFileChange}/>
+                  <input 
+                    type="file" 
+                    id="archivoExcel" 
+                    name="archivoExcel"  
+                    onChange={handleFileChange}
+                    accept=".xlsx, .xls"
+                  />
                 </div>
               </div>
               
