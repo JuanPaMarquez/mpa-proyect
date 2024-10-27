@@ -86,7 +86,7 @@
 
 .datosRegistro {
   margin-left: 30px;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -95,14 +95,42 @@
   padding: 10px 0;
 }
 
-
-.datosRegistro #semestre {
-  display: block;
-  width: 250px;
-  font-weight: bold;
-  font-size: 20px;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 200px;
 }
 
-.datosRegistro select option {
-  color: green;
+.dropdown-toggle {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-option:hover {
+  background-color: #eaeaea;
 }
