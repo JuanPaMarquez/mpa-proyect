@@ -3,8 +3,11 @@ import { FaQuestion } from "react-icons/fa";
 import { useState, useLayoutEffect } from "react";
 import Dropdown from '../components/Dropdown';
 import { corteSemestre, tipoMateria } from '../helpers/dropdownOptions';
+import { useNavigate } from 'react-router-dom';
+
 
 function CrearRegistro() {
+  const navigate = useNavigate();
   const [selectedCorte, setSelectedCorte] = useState(corteSemestre[0].value);
   const [selectedTipoMateria, setSelectedTipoMateria] = useState(tipoMateria[0].value);
   const [horasClase, setHorasClase] = useState(0);
@@ -23,6 +26,10 @@ function CrearRegistro() {
       setFileName(file.name); // Guarda el nombre del archivo
     }
   };
+
+  const handleCancelar = () => {
+    navigate('/perfil')
+  }
 
   const optionCorte = (option: string) => setSelectedCorte(option);
   const optionTipoMateria = (option: string) => setSelectedTipoMateria(option);
@@ -61,7 +68,7 @@ function CrearRegistro() {
               
             </div>
             <div className="controlCrearRegistro">
-              <button className='cancelarButton' type="submit">Cancelar</button>
+              <button className='cancelarButton' type="button" onClick={handleCancelar}>Cancelar</button>
               <button className='calculaButton' type="submit">Calcular</button>
             </div>
           </form>
