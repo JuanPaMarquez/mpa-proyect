@@ -48,3 +48,9 @@
 .dropdown-option:hover {
   background-color: #eaeaea;
 }
+
+@media (width <= 390px) {
+  .dropdown {
+    width: 90%;
+  }
+}

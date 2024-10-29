@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function CrearRegistro() {
   const navigate = useNavigate();
+  const [name, setName] = useState('');
   const [selectedCorte, setSelectedCorte] = useState(corteSemestre[0].value);
   const [selectedTipoMateria, setSelectedTipoMateria] = useState(tipoMateria[0].value);
   const [horasClase, setHorasClase] = useState(0);
@@ -15,9 +16,15 @@ function CrearRegistro() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("submit: ", name);
     console.log("submit: ", selectedCorte);
     console.log("submit: ", selectedTipoMateria);
     console.log("submit: ", horasClase);
+    console.log("submit: ", fileName);
+  }
+
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +61,10 @@ function CrearRegistro() {
               <Dropdown options={corteSemestre} cambiar={optionCorte} />
               <label className='materiaLabel' htmlFor="materia">Tipo de materia</label>
               <Dropdown options={tipoMateria} cambiar={optionTipoMateria} />
+              <div className='nombreInput'>
+                <label htmlFor="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" className='nombrePredicion' onChange={handleName} />
+              </div>
               <div className='horasClase'>
                 <label htmlFor="horasClase">Horas de clase (semanales)</label>
                 <input type="number" id="horasClase" name="horasClase" onChange={(e) => setHorasClase(Number(e.target.value))} />

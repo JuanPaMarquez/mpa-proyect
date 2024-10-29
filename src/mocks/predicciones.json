@@ -1,0 +1,52 @@
+{
+  "historialPredicciones": [
+    {
+      "id": 1,
+      "namePrediction": "Ciencia de Datos AR",
+      "corteSemestre": "Primer Corte",
+      "tipoMateria": "Teorica",
+      "horasClase": 10,
+      "prediction": []
+    },
+    {
+      "id": 2,
+      "namePrediction": "Legislacion Comercial BR",
+      "corteSemestre": "Segundo Corte",
+      "tipoMateria": "Practica",
+      "horasClase": 5,
+      "prediction": []
+    },
+    {
+      "id": 3,
+      "namePrediction": "Programacion Orientada a Objetos AR",
+      "corteSemestre": "Tercer Corte",
+      "tipoMateria": "Teorico-Practica",
+      "horasClase": 8,
+      "prediction": []
+    },
+    {
+      "id": 4,
+      "namePrediction": "Redes BR",
+      "corteSemestre": "Primer Corte",
+      "tipoMateria": "Practica",
+      "horasClase": 10,
+      "prediction": []
+    },
+    {
+      "id": 5,
+      "namePrediction": "Redes AR",
+      "corteSemestre": "Segundo Corte",
+      "tipoMateria": "Teorica",
+      "horasClase": 5,
+      "prediction": []
+    },
+    {
+      "id": 6,
+      "namePrediction": "Introduccion a la Programacion CR",
+      "corteSemestre": "Tercer Corte",
+      "tipoMateria": "Teorica",
+      "horasClase": 8,
+      "prediction": []
+    }
+  ]
+}

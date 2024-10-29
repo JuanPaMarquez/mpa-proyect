@@ -34,6 +34,23 @@
   }
 }
 
+.nombreInput{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.nombrePredicion {
+  width: 400px;
+  height: 30px;
+  justify-content: start;
+  padding-left: 10px;
+  border: none;
+  font-size: 20px;
+  
+}
+
 .insercionDatosContainer {
   margin-bottom: 30px;
   display: flex;
@@ -100,10 +117,17 @@
   justify-content: space-between;
 }
 
+#horasClase {
+  text-align: end;
+  padding-right: 10px;
+  font-size: 20px;
+  border: none;
+}
+
 #archivoExcel {
   display: flex;
   flex-direction: row-reverse;
-  width: 150px;
+  width: 130px;
 }
 
 .button-file {
@@ -118,12 +142,6 @@
   font-size: 17px;
 }
 
-.datosRegistro div input {
-  border: none;
-  text-align: end;
-  font-size: 15px;
-}
-
 @media (width <= 670px) {
   .horasClase {
     flex-direction: column;
@@ -131,9 +149,10 @@
   }
 
   #horasClase {
-    width: 200px;
+    width: 150px;
     height: 30px;
     text-align: start;
+    padding-left: 10px;
   }
 
   .archivo {
@@ -151,6 +170,15 @@
     height: 40px;
     font-size: 15px;
 
+  }
+
+  .nombreInput{
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .nombrePredicion {
+    width: 90%;
   }
 }
 

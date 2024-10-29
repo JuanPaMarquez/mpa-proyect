@@ -1,10 +1,11 @@
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
-import { MdDeleteOutline } from "react-icons/md";
+// import { MdDeleteOutline } from "react-icons/md";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import "../styles/Perfil.css";
-import { useLayoutEffect } from "react";
+import {  useLayoutEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import Predictions from "../components/Predictions";
 
 function Perfil() {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ function Perfil() {
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
   }, []);
+
   return (
     <>
       <main className="perfilContainer">
@@ -33,44 +35,7 @@ function Perfil() {
               <h2>Historial de predicciones</h2>
             </thead>
             <tbody>
-              <tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr><tr>
-                <th className="prediccion">Prediccion 1</th>
-                <th>Predicion CD AR Corte I</th>
-                <th><button className="delete"><MdDeleteOutline /></button></th>
-              </tr>
-              
+              <Predictions />
             </tbody>
           </table>
           <div className="pieConfig">
