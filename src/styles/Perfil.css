@@ -109,6 +109,8 @@
 .perfilTable th {
   border-bottom: 4px solid rgb(168, 168, 168);
   width: 100%;
+  text-align: start;
+  
 }
 .perfilTable th:not(.prediccion) {
   display: flex;
