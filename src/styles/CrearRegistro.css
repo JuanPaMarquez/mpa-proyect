@@ -166,9 +166,9 @@
   }
 
   .calculaButton, .cancelarButton {
-    width: 100px;
+    width: 150px;
     height: 40px;
-    font-size: 15px;
+    font-size: 25px;
 
   }
 
@@ -191,6 +191,24 @@
   .formRegistro {
     padding: 0;
   }
+
+  .cancelarButton {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .calculaButton {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .calculaButton, .cancelarButton {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+
+  }
+
   .datosRegistro {
     margin-left: 20px;
   }
