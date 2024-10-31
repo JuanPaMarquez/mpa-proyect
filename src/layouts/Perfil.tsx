@@ -30,14 +30,14 @@ function Perfil() {
           </div>
         </div>
         <div className="barraContenido">
-          <table className="perfilTable">
-            <thead className="perfilTableHead">
-              <h2>Historial de predicciones</h2>
-            </thead>
-            <tbody>
-              <Predictions />
-            </tbody>
-          </table>
+          <div>
+            <h2 className="perfilTableHead">Historial de predicciones</h2>
+            <table className="perfilTable">
+              <tbody>
+                <Predictions />
+              </tbody>
+            </table>
+          </div>
           <div className="pieConfig">
             <button className="buttonInfo">Informacion<FaRegQuestionCircle /></button>
             <button className="buttonNewPrediction" onClick={crearRegistro}>Nueva Prediccion</button>

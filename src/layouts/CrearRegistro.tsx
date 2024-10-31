@@ -53,7 +53,7 @@ function CrearRegistro() {
     if (file) {
       setFileName(file.name); // Guarda el nombre del archivo
     }
-  };
+  }
 
   const handleCancelar = () => {
     navigate('/perfil')

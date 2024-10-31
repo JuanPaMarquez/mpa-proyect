@@ -69,7 +69,6 @@
   border-collapse: collapse;
   font-size: 20px;
   overflow: auto;
-
 }
 
 
@@ -83,6 +82,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (width <= 660px) {
+  .perfilTableHead {
+    font-size: 30px;
+  }
+}
+
+@media (width <= 410px) {
+  .perfilTableHead {
+    font-size: 20px;
+  }
 }
 
 .perfilTable tbody {
@@ -167,6 +178,8 @@
   width: 200px;
   cursor: pointer;
 }
+
+
 
 @media (width <= 500px) {
   .perfilTable {
