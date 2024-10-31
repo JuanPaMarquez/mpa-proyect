@@ -1,4 +1,8 @@
 {
+  "idPersona": 1,
+  "nombreUsuario": "admin",
+  "correoUsuario": "admin@admin.com",
+  "password": "******",
   "historialPredicciones": [
     {
       "id": 1,
