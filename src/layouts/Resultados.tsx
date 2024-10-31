@@ -1,31 +1,19 @@
 import '../styles/Resultados.css'
 import resultsJSON from '../mocks/resultados.json'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {  useLayoutEffect, useState } from 'react';
 import { useStore } from '../services/CurrentPrediction';
 import { IoBookOutline } from "react-icons/io5";
 import { IoMdExit } from "react-icons/io";
-import prediction from '../mocks/predicciones.json'
 import { useNavigate } from 'react-router-dom';
 
 function Resultados() {
   const navigate = useNavigate();
-  const [results, setResults] = useState(resultsJSON.resultsData);
-  const [existResults, setExistResults] = useState(true);
-  const { currentIdPrediction } = useStore();
+  const [results] = useState(resultsJSON.resultsData);
   const { currentNamePrediction } = useStore();
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
   }, []);
-
-  useEffect(() => {
-    if (currentIdPrediction === null) {
-      console.log('No hay resultados')
-      setExistResults(false);
-    }
-
-    console.log(results)
-  }, [currentIdPrediction]);
 
   return (
     <>
