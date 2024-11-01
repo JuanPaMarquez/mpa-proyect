@@ -4,7 +4,7 @@ import { useState, useLayoutEffect } from "react";
 import Dropdown from '../components/Dropdown';
 import { corteSemestre, tipoMateria } from '../helpers/dropdownOptions';
 import { useNavigate } from 'react-router-dom';
-// import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx';
 // import axios from 'axios';
 
 
@@ -15,7 +15,7 @@ function CrearRegistro() {
   const [selectedTipoMateria, setSelectedTipoMateria] = useState(tipoMateria[0].value);
   const [horasClase, setHorasClase] = useState(0);
   const [fileName, setFileName] = useState<string | null>(null);
-  // const [fileData, setFileData] = useState<unknown[] | null>(null);
+  const [fileData, setFileData] = useState<unknown[] | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,36 +24,36 @@ function CrearRegistro() {
     console.log("submit: ", selectedTipoMateria);
     console.log("submit: ", horasClase);
     console.log("submit: ", fileName);
-    // console.log("submit: ", fileData);
-  }
-
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files?.[0];
-  //   if (file) {
-  //     setFileName(file.name);
-  //     const reader = new FileReader();
-  //     reader.onload = (event) => {
-  //       const data = new Uint8Array(event.target?.result as ArrayBuffer);
-  //       const workbook = XLSX.read(data, { type: 'array' });
-  //       const sheetName = workbook.SheetNames[0];
-  //       const worksheet = workbook.Sheets[sheetName];
-  //       const json = XLSX.utils.sheet_to_json(worksheet);
-  //       setFileData(json);
-  //     };
-  //     reader.readAsArrayBuffer(file);
-  //   }
-  // };
-
-  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    console.log("submit: ", fileData);
   }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      setFileName(file.name); // Guarda el nombre del archivo
+      setFileName(file.name);
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const data = new Uint8Array(event.target?.result as ArrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        const json = XLSX.utils.sheet_to_json(worksheet);
+        setFileData(json);
+      };
+      reader.readAsArrayBuffer(file);
     }
+  };
+
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
   }
+
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files?.[0];
+  //   if (file) {
+  //     setFileName(file.name); // Guarda el nombre del archivo
+  //   }
+  // }
 
   const handleCancelar = () => {
     navigate('/perfil')

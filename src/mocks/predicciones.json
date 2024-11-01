@@ -60,38 +60,5 @@
       "horasClase": 10,
       "prediction": []
     }
-    ,
-    {
-      "id": 8,
-      "namePrediction": "Introduccion a la Programacion BR",
-      "corteSemestre": "Primer Corte",
-      "tipoMateria": "Teorica",
-      "horasClase": 10,
-      "prediction": []
-    },
-    {
-      "id": 9,
-      "namePrediction": "Introduccion a la Programacion BR",
-      "corteSemestre": "Primer Corte",
-      "tipoMateria": "Teorica",
-      "horasClase": 10,
-      "prediction": []
-    },
-    {
-      "id": 10,
-      "namePrediction": "Introduccion a la Programacion BR",
-      "corteSemestre": "Primer Corte",
-      "tipoMateria": "Teorica",
-      "horasClase": 10,
-      "prediction": []
-    },
-    {
-      "id": 11,
-      "namePrediction": "Introduccion a la Programacion BR",
-      "corteSemestre": "Primer Corte",
-      "tipoMateria": "Teorica",
-      "horasClase": 10,
-      "prediction": []
-    }
   ]
 }
