@@ -21,7 +21,7 @@ function Login() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(inputUser);
+    // console.log(inputUser);
     navigate('/perfil');
   };
 

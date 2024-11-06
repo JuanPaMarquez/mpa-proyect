@@ -39,6 +39,7 @@ function CrearRegistro() {
         const worksheet = workbook.Sheets[sheetName];
         const json = XLSX.utils.sheet_to_json(worksheet);
         setFileData(json);
+        console.log('Carga Completa')
       };
       reader.readAsArrayBuffer(file);
     }
@@ -84,11 +85,26 @@ function CrearRegistro() {
               <Dropdown options={tipoMateria} cambiar={optionTipoMateria} />
               <div className='nombreInput'>
                 <label htmlFor="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" className='nombrePredicion' onChange={handleName} />
+                <input 
+                  type="text" 
+                  id="nombre" 
+                  name="nombre" 
+                  className='nombrePredicion' 
+                  onChange={handleName} 
+                  placeholder='Ciencia de Datos AR, Redes BR...'
+                  required
+                />
               </div>
               <div className='horasClase'>
                 <label htmlFor="horasClase">Horas de clase (semanales)</label>
-                <input type="number" id="horasClase" name="horasClase" onChange={(e) => setHorasClase(Number(e.target.value))} />
+                <input 
+                  type="number" 
+                  id="horasClase" 
+                  name="horasClase" 
+                  onChange={(e) => setHorasClase(Number(e.target.value))} 
+                  placeholder='4, 5, 10...'
+                  required
+                />
               </div>
               <div className='archivo'>
                 <label htmlFor="archivoExcel">Adjuntar archivo</label>
@@ -100,6 +116,7 @@ function CrearRegistro() {
                     name="archivoExcel"  
                     onChange={handleFileChange}
                     accept=".xlsx, .xls"
+                    required
                   />
                 </div>
               </div>
