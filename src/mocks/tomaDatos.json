@@ -1,12 +1,12 @@
 [
   {
-      "Estudiante": "Ana Rodríguez",
-      "15%": 5,
-      "20%": 1,
-      "15%_1": 3,
-      "20%_1": 2,
-      "10%": 4,
-      "20%_2": 1
+      "estudiante": "Ana Rodríguez",
+      "nota15c1": 5,
+      "nota20c1": 1,
+      "nota15c2": 3,
+      "nota20c2": 2,
+      "nota10c3": 4,
+      "nota20c3": 1
   },
   {
       "Estudiante": "Luis Gómez",

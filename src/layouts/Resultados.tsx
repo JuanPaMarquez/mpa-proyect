@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Resultados() {
   const navigate = useNavigate();
-  const [results] = useState(resultsJSON.resultsData);
+  const [results] = useState(resultsJSON);
   const { currentNamePrediction } = useStore();
 
   useLayoutEffect(() => {

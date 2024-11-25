@@ -6,7 +6,7 @@ import { useStore } from '../services/CurrentPrediction';
 
 function Predictions() {
   const navigate = useNavigate();
-  const [predicciones, setPredicciones] = useState(prediction.historialPredicciones);
+  const [predicciones, setPredicciones] = useState(prediction);
   const { updateCurrentId } = useStore();
   const { updateCurrentName } = useStore();
 

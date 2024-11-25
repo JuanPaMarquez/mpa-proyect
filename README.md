@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14213592.svg)](https://doi.org/10.5281/zenodo.14213592)
+
 [![pages-build-deployment](https://github.com/JuanPaMarquez/mpa-proyect/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/JuanPaMarquez/mpa-proyect/actions/workflows/pages/pages-build-deployment)
 
 # Sistema con Modelo de Predicion Academico

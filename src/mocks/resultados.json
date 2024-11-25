@@ -1,80 +1,79 @@
-{
-  "resultsData": [
-    { 
-      "nombre": "Juan Perez",
-      "resultado": "Segun los resultados obtenidos, Juan Perez solo necesitas sacar un 3.0 para aprobar la materia."
-    },
-    { 
-      "nombre": "Maria Rodriguez",
-      "resultado": "Debes prestar atencion a Maria Rodriguez, ya que bajaste tu notas en la materia. de 4.0 a 2.0 en el ultimo corte."
-    },
-    { 
-      "nombre": "Carlos Sanchez",
-      "resultado": "Debes esforzarte mas en la materia, ya que tu promedio es de 2.0."
-    },
-    {
-      "nombre": "Luisa Perez",
-      "resultado": "Necesitas sacar un 4.0 para aprobar la materia." 
-    },
-    {
-      "nombre": "Pedro Rodriguez",
-      "resultado": "Has mejorado tu promedio en la materia, de 2.0 a 4.0." 
-    },
-    {
-      "nombre": "Ana Fernandez",
-      "resultado": "Ana Fernandez tiene un desempeño estable en la materia, manteniéndose en un promedio de 3.5."
-    },
-    {
-      "nombre": "Luis Gomez",
-      "resultado": "Para Luis Gomez, se recomienda un mayor esfuerzo, ya que su promedio actual es de 2.5."
-    },
-    {
-      "nombre": "Claudia Martinez",
-      "resultado": "Claudia Martinez muestra una tendencia positiva; su promedio subió de 2.0 a 3.5 en el último corte."
-    },
-    {
-      "nombre": "Javier Lopez",
-      "resultado": "Javier Lopez necesita mantener un promedio de al menos 3.2 en el próximo corte para asegurar su aprobación."
-    },
-    {
-      "nombre": "Elena Castro",
-      "resultado": "Elena Castro ha bajado su promedio en la materia de 3.5 a 2.5; se recomienda una revisión de su desempeño."
-    },
-    {
-      "nombre": "Rodrigo Ruiz",
-      "resultado": "Con un promedio de 4.5, Rodrigo Ruiz está destacando en la materia."
-    },
-    {
-      "nombre": "Laura Diaz",
-      "resultado": "Laura Diaz debe obtener un 3.8 en el próximo corte para aprobar la materia."
-    },
-    {
-      "nombre": "Fernando Gutierrez",
-      "resultado": "Fernando Gutierrez muestra un promedio estable de 3.0, pero se recomienda mantener el enfoque."
-    },
-    {
-      "nombre": "Sofia Herrera",
-      "resultado": "Sofia Herrera bajó su promedio de 4.0 a 3.0; es importante que recupere su desempeño en el próximo corte."
-    },
-    {
-      "nombre": "Gabriela Torres",
-      "resultado": "Gabriela Torres debe obtener un 3.6 en el próximo corte para garantizar su aprobación en la materia."
-    },
-    {
-      "nombre": "Andres Morales",
-      "resultado": "Andres Morales mantiene un promedio de 3.0, con una ligera mejora en su rendimiento."
-    },
-    {
-      "nombre": "Valentina Ortega",
-      "resultado": "Valentina Ortega ha mejorado su promedio de 2.5 a 3.5, mostrando una tendencia positiva."
-    },
-    {
-      "nombre": "Pablo Ramirez",
-      "resultado": "Pablo Ramirez necesita un 3.0 en el próximo corte para aprobar la materia."
-    },
-    {
-      "nombre": "Camila Torres",
-      "resultado": "Camila Torres debe mejorar su rendimiento, ya que su promedio es de 2.5."
-    }
-  ]
-}
+[
+  { 
+    "nombre": "Juan Perez",
+    "resultado": "Segun los resultados obtenidos, Juan Perez solo necesitas sacar un 3.0 para aprobar la materia."
+  },
+  { 
+    "nombre": "Maria Rodriguez",
+    "resultado": "Debes prestar atencion a Maria Rodriguez, ya que bajaste tu notas en la materia. de 4.0 a 2.0 en el ultimo corte."
+  },
+  { 
+    "nombre": "Carlos Sanchez",
+    "resultado": "Debes esforzarte mas en la materia, ya que tu promedio es de 2.0."
+  },
+  {
+    "nombre": "Luisa Perez",
+    "resultado": "Necesitas sacar un 4.0 para aprobar la materia." 
+  },
+  {
+    "nombre": "Pedro Rodriguez",
+    "resultado": "Has mejorado tu promedio en la materia, de 2.0 a 4.0." 
+  },
+  {
+    "nombre": "Ana Fernandez",
+    "resultado": "Ana Fernandez tiene un desempeño estable en la materia, manteniéndose en un promedio de 3.5."
+  },
+  {
+    "nombre": "Luis Gomez",
+    "resultado": "Para Luis Gomez, se recomienda un mayor esfuerzo, ya que su promedio actual es de 2.5."
+  },
+  {
+    "nombre": "Claudia Martinez",
+    "resultado": "Claudia Martinez muestra una tendencia positiva; su promedio subió de 2.0 a 3.5 en el último corte."
+  },
+  {
+    "nombre": "Javier Lopez",
+    "resultado": "Javier Lopez necesita mantener un promedio de al menos 3.2 en el próximo corte para asegurar su aprobación."
+  },
+  {
+    "nombre": "Elena Castro",
+    "resultado": "Elena Castro ha bajado su promedio en la materia de 3.5 a 2.5; se recomienda una revisión de su desempeño."
+  },
+  {
+    "nombre": "Rodrigo Ruiz",
+    "resultado": "Con un promedio de 4.5, Rodrigo Ruiz está destacando en la materia."
+  },
+  {
+    "nombre": "Laura Diaz",
+    "resultado": "Laura Diaz debe obtener un 3.8 en el próximo corte para aprobar la materia."
+  },
+  {
+    "nombre": "Fernando Gutierrez",
+    "resultado": "Fernando Gutierrez muestra un promedio estable de 3.0, pero se recomienda mantener el enfoque."
+  },
+  {
+    "nombre": "Sofia Herrera",
+    "resultado": "Sofia Herrera bajó su promedio de 4.0 a 3.0; es importante que recupere su desempeño en el próximo corte."
+  },
+  {
+    "nombre": "Gabriela Torres",
+    "resultado": "Gabriela Torres debe obtener un 3.6 en el próximo corte para garantizar su aprobación en la materia."
+  },
+  {
+    "nombre": "Andres Morales",
+    "resultado": "Andres Morales mantiene un promedio de 3.0, con una ligera mejora en su rendimiento."
+  },
+  {
+    "nombre": "Valentina Ortega",
+    "resultado": "Valentina Ortega ha mejorado su promedio de 2.5 a 3.5, mostrando una tendencia positiva."
+  },
+  {
+    "nombre": "Pablo Ramirez",
+    "resultado": "Pablo Ramirez necesita un 3.0 en el próximo corte para aprobar la materia."
+  },
+  {
+    "nombre": "Camila Torres",
+    "resultado": "Camila Torres debe mejorar su rendimiento, ya que su promedio es de 2.5."
+  }
+]
+
