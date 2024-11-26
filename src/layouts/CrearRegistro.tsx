@@ -19,8 +19,9 @@ function CrearRegistro() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const corteNumero = arreglodeCorte(selectedCorte)
     console.log("submit: ", name);
-    console.log("submit: ", selectedCorte);
+    console.log("submit: ", corteNumero);
     console.log("submit: ", selectedTipoMateria);
     console.log("submit: ", horasClase);
     console.log("submit: ", fileName);
@@ -49,12 +50,14 @@ function CrearRegistro() {
     setName(e.target.value);
   }
 
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files?.[0];
-  //   if (file) {
-  //     setFileName(file.name); // Guarda el nombre del archivo
-  //   }
-  // }
+  const arreglodeCorte = (corte: string) => {
+    if(corte==="Primer Corte") {
+      return 1
+    } else if (corte==="Segundo Corte") {
+      return 2
+    }
+    return 3
+  }
 
   const handleCancelar = () => {
     navigate('/perfil')

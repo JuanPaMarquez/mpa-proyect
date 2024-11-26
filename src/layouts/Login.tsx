@@ -1,5 +1,5 @@
 import '../styles/Login.css'
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { FiUser, FiLock  } from "react-icons/fi";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
@@ -19,10 +19,35 @@ function Login() {
     setInputLock(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log(inputUser);
-    navigate('/perfil');
+    try {
+      const response = await fetch("http://localhost:8081/api/v1/profesor/login", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          "user": inputUser,
+          "password": inputLock,
+        })
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      console.log("usuario: ", data)
+
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+    
+    // navigate('/perfil');
   };
 
   const girarFuncion = () => {
