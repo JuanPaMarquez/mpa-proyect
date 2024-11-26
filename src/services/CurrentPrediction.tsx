@@ -1,5 +1,25 @@
 import { create } from 'zustand'
 
+interface User {
+  iduser: number;
+  user: string;
+  email: string;
+  nombrecompleto: string;
+  password: string;
+}
+
+interface UserState {
+  user: User | null;
+  setUser: (user: User) => void;
+  clearUser: () => void;
+}
+
+const useUserStore = create<UserState>((set) => ({
+  user: null,
+  setUser: (user) => set({ user }),
+  clearUser: () => set({ user: null }),
+}));
+
 interface globalData {
   currentIdPrediction: number | null
   currentNamePrediction: string | null
@@ -8,10 +28,12 @@ interface globalData {
 }
 
 // Example usage of the imported 'create' function
-export const useStore = create<globalData>()((set) => ({
+const useStore = create<globalData>()((set) => ({
   currentIdPrediction: null,
   currentNamePrediction: null,
   updateCurrentId: (newId: number) => set({ currentIdPrediction: newId }),
   updateCurrentName: (newName: string) => set({ currentNamePrediction: newName })
 }))
+
+export { useUserStore, useStore }
 

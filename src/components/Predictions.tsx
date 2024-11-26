@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { MdDeleteOutline } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../services/CurrentPrediction';
+import { useUserStore } from '../services/CurrentPrediction';
+import {APILINK} from '../helpers/apilink';
 
 interface Prediction {
   idprediccion: number;
@@ -14,13 +16,31 @@ interface Prediction {
 }
 
 function Predictions() {
+  const user = useUserStore((state) => state.user);
   const navigate = useNavigate();
   const [predictions, setPredictions] = useState<Prediction[]>([]);
   const { updateCurrentId } = useStore();
   const { updateCurrentName } = useStore();
 
-  const deletePrediction = (id: number) => {
-    // setPredicciones(predicciones.filter(prediccion => prediccion.id !== id));
+  const deletePrediction = async (id: number) => {
+    try {
+      const response = fetch(`${APILINK}/prediccion/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
+  
+      console.log("Prediction deleted:", response);
+
+      // Actualizar el estado local para eliminar la predicción
+      setPredictions((prevPredictions) =>
+        prevPredictions.filter((prediction) => prediction.idprediccion !== id)
+      );
+
+    } catch (error) {
+      console.log(error)
+    }
   }
   
   const handlePrediction = (id: number, name: string) => {
@@ -40,9 +60,10 @@ function Predictions() {
   }
 
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/v1/prediccion/1", {
+        const response = await fetch(`${APILINK}/prediccion/${user?.iduser}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -64,7 +85,7 @@ function Predictions() {
   
     fetchData();
 
-  }, []);
+  }, [user]);
 
   return (
     <>

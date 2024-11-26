@@ -195,3 +195,10 @@ a.buttonPassword:active {
   font-weight: 500;
   color: #000000;
 }
+
+.badUser {
+  padding-top: 10px;
+  color: red;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}

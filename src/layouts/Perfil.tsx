@@ -1,18 +1,37 @@
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
 // import { MdDeleteOutline } from "react-icons/md";
-import { FaRegQuestionCircle } from "react-icons/fa";
+import { IoExitOutline } from "react-icons/io5";
 import "../styles/Perfil.css";
-import {  useLayoutEffect } from "react";
+import {  useEffect, useLayoutEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Predictions from "../components/Predictions";
+import { useUserStore } from '../services/CurrentPrediction';
 
 function Perfil() {
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
   const navigate = useNavigate();
 
   const crearRegistro = () => {
     navigate('/registro');
   }
+
+  const cerrarSesion = () => {
+    localStorage.removeItem('user');
+    navigate('/login');
+  }
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) {
+      navigate('/login');
+    } else {
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      console.log(user)
+    }
+  }, []);
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
@@ -23,7 +42,7 @@ function Perfil() {
       <main className="perfilContainer">
         <div className="barraPerfil">
           <div className="perfilNombre">
-            <IoPersonOutline />Jose Chacon
+            <IoPersonOutline />{user?.nombrecompleto}
           </div>
           <div className="perfilConfig">
             <IoMdSettings />
@@ -39,7 +58,7 @@ function Perfil() {
             </table>
           </div>
           <div className="pieConfig">
-            <button className="buttonInfo">Informacion<FaRegQuestionCircle /></button>
+            <button className="buttonInfo" onClick={cerrarSesion}>Cerrar Sesion<IoExitOutline /></button>
             <button className="buttonNewPrediction" onClick={crearRegistro}>Nueva Prediccion</button>
           </div>
         </div>

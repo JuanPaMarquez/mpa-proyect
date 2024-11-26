@@ -1,14 +1,16 @@
 import '../styles/Login.css'
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useState } from 'react'
 import { FiUser, FiLock  } from "react-icons/fi";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import { APILINK } from '../helpers/apilink';
 
 function Login() {
   const [inputUser, setInputUser] = useState('')
   const [inputLock, setInputLock] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [girar, setGirar] = useState(false)
+  const [badUser, setBadUser] = useState('')
   const navigate = useNavigate();
 
   const handleInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +25,7 @@ function Login() {
     e.preventDefault();
     // console.log(inputUser);
     try {
-      const response = await fetch("http://localhost:8081/api/v1/profesor/login", {
+      const response = await fetch(`${APILINK}/profesor/login`, {
         method: "post",
         headers: {
           "Content-Type": "application/json"
@@ -34,20 +36,28 @@ function Login() {
         })
       })
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       const data = await response.json();
 
-      console.log("usuario: ", data)
-
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      } 
+      
+      if (!data) {
+        console.log(data)
+        setBadUser("Usuario o contraseña incorrectos");
+        setInputUser('');
+        setInputLock('');
+      } else {
+        navigate('/perfil');
+        // Guardar la información en localStorage
+        localStorage.setItem('user', JSON.stringify(data));
+      }
+      console.log(data)
 
     } catch (error) {
       console.error("Error fetching data:", error);
     }
     
-    // navigate('/perfil');
   };
 
   const girarFuncion = () => {
@@ -103,6 +113,7 @@ function Login() {
             {showPassword ? <IoMdEye /> : <IoMdEyeOff /> }
           </button>)}
         </div>
+        {badUser !== '' && <p className='badUser'>{badUser}</p>}
 
         <h3 className='textPassword'>
           ¿Has olvidado tu <u>

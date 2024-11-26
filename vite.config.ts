@@ -4,5 +4,14 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/mpa-proyect/'
+  base: '/mpa-proyect/',
+  server: {
+    proxy: {
+      '/evaluar': {
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })

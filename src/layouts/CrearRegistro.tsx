@@ -1,14 +1,18 @@
 import '../styles/crearRegistro.css'
 import { FaQuestion } from "react-icons/fa";
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import Dropdown from '../components/Dropdown';
 import { corteSemestre, tipoMateria } from '../helpers/dropdownOptions';
 import { useNavigate } from 'react-router-dom';
+import { useUserStore } from '../services/CurrentPrediction';
 import * as XLSX from 'xlsx';
+import { useStore } from '../services/CurrentPrediction';
+import { APILINK, APIMODEL } from '../helpers/apilink';
 // import axios from 'axios';
 
-
 function CrearRegistro() {
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [selectedCorte, setSelectedCorte] = useState(corteSemestre[0].value);
@@ -16,8 +20,9 @@ function CrearRegistro() {
   const [horasClase, setHorasClase] = useState(0);
   const [fileName, setFileName] = useState<string | null>(null);
   const [fileData, setFileData] = useState<unknown[] | null>(null);
+  const { updateCurrentId } = useStore();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const corteNumero = arreglodeCorte(selectedCorte)
     console.log("submit: ", name);
@@ -26,6 +31,56 @@ function CrearRegistro() {
     console.log("submit: ", horasClase);
     console.log("submit: ", fileName);
     console.log("submit: ", fileData);
+
+    try {
+      const response = await fetch(`${APILINK}/prediccion`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          "iduser": user?.iduser,
+          "nombreprediccion": name,
+          "cortesemestre": corteNumero,
+          "tipomateria": selectedTipoMateria,
+          "horasclase": horasClase,
+        })
+      })
+
+      const data = await response.json();
+      console.log(data)
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      updateCurrentId(data.idprediccion);
+
+      const resResults = await fetch(`http://127.0.0.1:5000/evaluar/${data.idprediccion}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(fileData)
+      })
+
+      const resultados = await resResults.json();
+      console.log("resultados", resultados)
+      if(resultados) {
+        const resGuardarResults = await fetch(`${APILINK}/resultados`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(resultados)
+        })
+        
+        const datosEstudiantes = await resGuardarResults.json();
+        console.log("datos en la api: ",datosEstudiantes)
+        navigate('/resultados')
+      }
+      
+
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,6 +120,16 @@ function CrearRegistro() {
 
   const optionCorte = (option: string) => setSelectedCorte(option);
   const optionTipoMateria = (option: string) => setSelectedTipoMateria(option);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) {
+      navigate('/login');
+    } else {
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+    }
+  }, [])
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";
