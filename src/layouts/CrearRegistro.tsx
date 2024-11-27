@@ -53,7 +53,7 @@ function CrearRegistro() {
 
       updateCurrentId(data.idprediccion);
 
-      const resResults = await fetch(`http://127.0.0.1:5000/evaluar/${data.idprediccion}`, {
+      const resResults = await fetch(`${APIMODEL}/${data.idprediccion}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
