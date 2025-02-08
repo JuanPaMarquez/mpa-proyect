@@ -8,7 +8,6 @@ import { useLayoutEffect } from 'react';
 function Inicio() {
   const navigate = useNavigate();
 
-
   const navLogin = () => {
     navigate('/login');
   }

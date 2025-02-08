@@ -10,13 +10,13 @@ interface User {
 
 interface UserState {
   user: User | null;
-  setUser: (user: User) => void;
+  setUser: (newUser: User) => void;
   clearUser: () => void;
 }
 
 const useUserStore = create<UserState>((set) => ({
   user: null,
-  setUser: (user) => set({ user }),
+  setUser: (newUser) => set({ user: newUser }),
   clearUser: () => set({ user: null }),
 }));
 
@@ -31,8 +31,8 @@ interface globalData {
 const useStore = create<globalData>()((set) => ({
   currentIdPrediction: null,
   currentNamePrediction: null,
-  updateCurrentId: (newId: number) => set({ currentIdPrediction: newId }),
-  updateCurrentName: (newName: string) => set({ currentNamePrediction: newName })
+  updateCurrentId: (newId) => set({ currentIdPrediction: newId }),
+  updateCurrentName: (newName) => set({ currentNamePrediction: newName })
 }))
 
 export { useUserStore, useStore }

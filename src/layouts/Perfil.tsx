@@ -9,9 +9,8 @@ import Predictions from "../components/Predictions";
 import { useUserStore } from '../services/CurrentPrediction';
 
 function Perfil() {
-  const user = useUserStore((state) => state.user);
-  const setUser = useUserStore((state) => state.setUser);
   const navigate = useNavigate();
+  const { user, setUser } = useUserStore();
 
   const crearRegistro = () => {
     navigate('/registro');

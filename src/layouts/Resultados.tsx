@@ -16,8 +16,8 @@ interface Result {
 
 function Resultados() {
   const navigate = useNavigate();
-  const [results, setResults] = useState<Result[]>([]);
   const { currentIdPrediction, currentNamePrediction } = useStore();
+  const [results, setResults] = useState<Result[]>([]);
 
   useLayoutEffect(() => {
     document.body.style.background = "linear-gradient(to left, #A46596 50%, #423FFB 80%)";

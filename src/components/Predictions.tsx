@@ -16,11 +16,12 @@ interface Prediction {
 }
 
 function Predictions() {
-  const user = useUserStore((state) => state.user);
   const navigate = useNavigate();
+
+  const { user } = useUserStore();
+  const { updateCurrentId, updateCurrentName } = useStore();
+  
   const [predictions, setPredictions] = useState<Prediction[]>([]);
-  const { updateCurrentId } = useStore();
-  const { updateCurrentName } = useStore();
 
   const deletePrediction = async (id: number) => {
     try {

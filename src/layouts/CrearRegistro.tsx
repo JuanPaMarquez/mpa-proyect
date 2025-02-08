@@ -11,16 +11,15 @@ import { APILINK, APIMODEL } from '../helpers/apilink';
 // import axios from 'axios';
 
 function CrearRegistro() {
-  const user = useUserStore((state) => state.user);
-  const setUser = useUserStore((state) => state.setUser);
   const navigate = useNavigate();
+  const { user, setUser } = useUserStore();
+  const { updateCurrentId } = useStore();
   const [name, setName] = useState('');
   const [selectedCorte, setSelectedCorte] = useState(corteSemestre[0].value);
   const [selectedTipoMateria, setSelectedTipoMateria] = useState(tipoMateria[0].value);
   const [horasClase, setHorasClase] = useState(0);
   const [fileName, setFileName] = useState<string | null>(null);
   const [fileData, setFileData] = useState<unknown[] | null>(null);
-  const { updateCurrentId } = useStore();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

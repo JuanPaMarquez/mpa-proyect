@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { APILINK } from '../helpers/apilink';
 
 function Login() {
+  const navigate = useNavigate();
   const [inputUser, setInputUser] = useState('')
   const [inputLock, setInputLock] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [girar, setGirar] = useState(false)
   const [badUser, setBadUser] = useState('')
-  const navigate = useNavigate();
 
   const handleInputUser = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUser(e.target.value);
